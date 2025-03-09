@@ -1,8 +1,13 @@
+
+import java.util.Scanner;
+
 public class Terminal {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Scanner scan = new Scanner(System.in);
 
-        
+        String keyImput;
+
+        keyImput = scan.nextLine();
     }
 }
