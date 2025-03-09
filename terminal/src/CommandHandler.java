@@ -9,7 +9,7 @@ public class CommandHandler {
         this.fileManager = fileManager;
         this.history = history;
     }
-
+//asdasdasdasdasdad//
     public void executeCommand(String comand){
 
         String[] commandParts = comand.split(" ",2);
