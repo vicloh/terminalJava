@@ -1,23 +1,11 @@
-# Terminal Simulado - Trabalho Final de POO I
+# Terminal Simulado Linux - Trabalho Final de POO I
 
 Este projeto é uma aplicação em modo texto que simula um terminal Linux, permitindo ao usuário executar comandos básicos como navegar entre diretórios, listar arquivos, criar e remover itens, e visualizar o histórico de comandos.
 
 ## Requisitos
 
-- Java 8 ou superior
+- Java 23
 - Um terminal de comandos (cmd, PowerShell, Bash, etc.)
-
-## Como Executar
-
-1. Clone este repositório ou baixe os arquivos do projeto.
-2. Compile o código-fonte com o seguinte comando:
-   ```sh
-   javac -d bin src/*.java
-   ```
-3. Execute a aplicação com:
-   ```sh
-   java -cp bin Terminal
-   ```
 
 ## Comandos Disponíveis
 
@@ -48,10 +36,6 @@ O código está organizado nas seguintes classes:
 ## Histórico de Comandos
 
 O sistema armazena o histórico de comandos em um arquivo `.history.txt`, permitindo a recuperação de comandos digitados anteriormente.
-
-## Contribuição
-
-Caso queira melhorar o projeto, sinta-se à vontade para enviar um pull request ou sugerir mudanças!
 
 ## Licença
 
