@@ -1,8 +1,8 @@
 public class CommandHandler {
 
-    private DirectoryManager directoryManager;
-    private FileManager fileManager;
-    private HistoryManager history;
+    private final DirectoryManager directoryManager;
+    private final FileManager fileManager;
+    private final HistoryManager history;
 
     public CommandHandler(DirectoryManager directoryManager, FileManager fileManager, HistoryManager history) {
         this.directoryManager = directoryManager;
@@ -16,39 +16,33 @@ public class CommandHandler {
         String command = commandParts[0];
         String argument = commandParts.length > 1 ? commandParts[1] : null;
 
-        switch(command){
-            case "pwd":
-                executePwd();
-                break;
-            case "cd":
-                executeCd(argument);
-                break;
-            case "ls":
-                executeLs();
-                break;
-            case "touch":
-                executeTouch(argument);
-                break;
-            case "cat":
-                executeCat(argument);
-                break;
-            case "echo":
-                executeEcho(argument);
-                break;
-            case "history":
-                executeHistory();
-                break;
-            case "mkdir":
-                executeMkdir(argument);
-                break;
-            case "rm":
-                executeRm(argument);
-                break;
-            case "exit":
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Command not found");
+        switch(command)
+        {
+            case "pwd" -> executePwd();
+            case "cd" -> executeCd(argument);
+            case "ls" -> executeLs();
+            case "touch" -> executeTouch(argument);
+            case "cat" -> executeCat(argument);
+            case "echo" -> executeEcho(argument);
+            case "history" -> executeHistory();
+            case "mkdir" -> executeMkdir(argument);
+            case "rm" -> executeRm(argument);
+            case "exit" -> System.exit(0);
+            default -> System.out.println("Command not found");
+            case "help" -> System.out.println
+                (
+                    "Available commands: \n" +
+                    "\n   -pwd -- Displays the current directory.\n" +
+                    "   -ls -- Lists the files and directories in the current directory.\n" +
+                    "   -cd <directory> -- Navigates between directories.\n" +
+                    "   -mkdir <name> -- Creates a new directory.\n" +
+                    "   -touch <file> -- Creates a new empty file.\n" +
+                    "   -rm <file/directory> -- Removes a file or directory.\n" +
+                    "   -cat <file> -- Displays the contents of a file.\n" +
+                    "   -echo <text> > <file> -- Writes text to a file.\n" +
+                    "   -history -- Shows the history of entered commands.\n" +
+                    "   -exit -- Exits the program."
+                );
         }
     }
 
@@ -82,9 +76,12 @@ public class CommandHandler {
 
     private void executeEcho(String text){
         String[] textParts = text.split(" > ",2);
-        if(textParts.length == 2){
+        if(textParts.length == 2)
+        {
             fileManager.writeToFile(textParts[1], textParts[0]);
-        } else {
+        } 
+        else 
+        {
             System.out.println("Syntax error. Try: echo <text> > <filename>");
         }
     }

@@ -26,28 +26,40 @@ public class DirectoryManager {
 
     public void changeDirectory(String path){
         File newDirectory;
-        if(path.equals("..")){
+        if(path.equals(".."))
+        {
             newDirectory = currentDirectory.getParentFile();
-        }else{
+        }
+        else
+        {
             newDirectory = new File(currentDirectory, path);
         }
 
-        if(newDirectory != null && newDirectory.isDirectory()&& newDirectory.exists()){
+        if(newDirectory != null && newDirectory.isDirectory()&& newDirectory.exists())
+        {
             currentDirectory = newDirectory;
-        }else{
+        }
+        else
+        {
             System.out.println("Directory not found");
         }
     }
 
     public void createDirectory(String dirName){
         File newDirectory = new File(currentDirectory, dirName);
-        if(!newDirectory.exists()){
-            if(newDirectory.mkdir()){
+        if(!newDirectory.exists())
+        {
+            if(newDirectory.mkdir())
+            {
                 System.out.println("Directory created"+newDirectory);
-            }else{
+            }
+            else
+            {
                 System.out.println("Failed to create directory");
             }
-        }else{
+        }
+        else
+        {
             System.out.println("Directory already exists");
         }
     }
