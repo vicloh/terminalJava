@@ -1,18 +1,59 @@
-## Getting Started
+# Terminal Simulado - Trabalho Final de POO I
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto é uma aplicação em modo texto que simula um terminal Linux, permitindo ao usuário executar comandos básicos como navegar entre diretórios, listar arquivos, criar e remover itens, e visualizar o histórico de comandos.
 
-## Folder Structure
+## Requisitos
 
-The workspace contains two folders by default, where:
+- Java 8 ou superior
+- Um terminal de comandos (cmd, PowerShell, Bash, etc.)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Como Executar
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+1. Clone este repositório ou baixe os arquivos do projeto.
+2. Compile o código-fonte com o seguinte comando:
+   ```sh
+   javac -d bin src/*.java
+   ```
+3. Execute a aplicação com:
+   ```sh
+   java -cp bin Terminal
+   ```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Comandos Disponíveis
 
-## Dependency Management
+O sistema suporta os seguintes comandos:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+| Comando                  | Descrição |
+|--------------------------|-----------|
+| `pwd`                    | Exibe o diretório atual |
+| `ls`                     | Lista os arquivos e diretórios do diretório atual |
+| `cd <diretório>`         | Navega entre diretórios |
+| `mkdir <nome>`           | Cria um novo diretório |
+| `touch <arquivo>`        | Cria um novo arquivo vazio |
+| `rm <arquivo/diretório>` | Remove um arquivo ou diretório |
+| `cat <arquivo>`          | Exibe o conteúdo de um arquivo |
+| `echo <texto> > <arquivo>` | Escreve texto em um arquivo |
+| `history`                | Mostra o histórico de comandos digitados |
+| `exit`                   | Encerra o programa |
+
+## Estrutura do Código
+
+O código está organizado nas seguintes classes:
+
+- **Terminal**: Classe principal que inicia o programa e gerencia a entrada do usuário.
+- **CommandHandler**: Responsável por interpretar e executar os comandos.
+- **FileManager**: Gerencia a criação, leitura e remoção de arquivos.
+- **DirectoryManager**: Manipula a navegação e criação de diretórios.
+
+## Histórico de Comandos
+
+O sistema armazena o histórico de comandos em um arquivo `.history.txt`, permitindo a recuperação de comandos digitados anteriormente.
+
+## Contribuição
+
+Caso queira melhorar o projeto, sinta-se à vontade para enviar um pull request ou sugerir mudanças!
+
+## Licença
+
+Este projeto foi desenvolvido para fins acadêmicos na disciplina de Programação Orientada a Objetos I.
+
