@@ -11,7 +11,7 @@ public class CommandHandler {
     }
 
     public void executeCommand(String comand){
-
+        history.addCommand(comand);
         String[] commandParts = comand.split(" ",2);
         String command = commandParts[0];
         String argument = commandParts.length > 1 ? commandParts[1] : null;
